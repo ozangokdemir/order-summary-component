@@ -10,6 +10,7 @@
 	--body-copy-font-family: 'Red Hat Display', sans-serif;
 	
 	--layout-frame-width: 28em;
+	--layout-inner-frames-width: 22em;
 }
 
 .sr-only {
@@ -48,7 +49,7 @@ body{
 .l-banner{
 	width: var(--layout-frame-width);
 	
-	border-radius: 16px 16px 0 0;
+	border-radius: 20px 20px 0 0;
 }
 
 .l-banner-img{
@@ -59,12 +60,69 @@ body{
 }
 
 .l-content{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	
 	width: var(--layout-frame-width);
+	height: 28em;
 	
 	background: white;
 	
-	border-radius: 0 0 16px 16px;
-	box-shadow: 0 10px  var(--desaturated-blue);
+	border-radius: 0 0 20px 20px;
+	box-shadow: 0 20px 20px -20px var(--desaturated-blue);
+
+}
+
+.main-title{
+	padding-top: .8em;
+	
+	color: var(--dark-blue);
+	
+	font-weight: 900;
+	font-size: 1.8em;
+}
+
+.description{
+	margin-top:0;
+	padding: 0 3em 0 3em;
+	
+	color: var(--desaturated-blue);
+	
+	font-weight: 500;
+	text-align: center;
+}
+
+.l-plan-selection{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	
+	height: 6em;
+	width: var(--layout-inner-frames-width);
+	
+	background: var(--very-pale-blue);
+	border-radius: 10px;
+}
+
+.ico-plan-selection{
+	
+}
+
+.plan-selection{
+	
+}
+
+
+.plan-change-link{
+	
+}
+
+.btn{
+	
+	width: var(--layout-inner-frames-width);
 	
 	text-align: center;
 }
+
