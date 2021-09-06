@@ -7,10 +7,13 @@
 	--dark-blue: hsl(223, 47%, 23%);
 	
 	--body-copy-font-size: 16px;
+	--body-copy-font-size-mobile: 14px;
 	--body-copy-font-family: 'Red Hat Display', sans-serif;
 	
 	--layout-frame-width: 28em;
-	--layout-inner-frames-width: 22em;
+	--layout-inner-frame-width: 22em;
+	--layout-frame-width-mobile: 23em;
+	--layout-inner-frame-width-mobile: 19em;
 }
 
 .sr-only {
@@ -25,17 +28,28 @@
       border: 0;
 }
 
+/*GLOBAL*/
+
 body{
 	margin: 0;
 	padding: 0;
 	
 	background-image: url("images/pattern-background-desktop.svg");
-	background-repeat: no-repeat;
+	background-repeat: repeat-x; /**LEARNING** : background repeating on x axis*/
 	background-color: var(--pale-blue);
 	
+	color: var(--dark-blue);
 	font-size: var(--body-copy-font-size);
 	font-family: var(--body-copy-font-family);
 }
+
+.attribution {
+	color: grey;
+	text-align: center;
+	font-size: .8em;
+}
+
+/*LAYOUT*/
 
 .l-bloc-page{
 	display: flex;
@@ -94,35 +108,114 @@ body{
 }
 
 .l-plan-selection{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
 	align-items: center;
-	
+
 	height: 6em;
-	width: var(--layout-inner-frames-width);
+	width: var(--layout-inner-frame-width);
 	
 	background: var(--very-pale-blue);
 	border-radius: 10px;
 }
 
 .ico-plan-selection{
-	
+	padding-left: 1.5em;
 }
 
 .plan-selection{
-	
+	padding-left: .5em;
 }
 
+.plan-chosen{
+	margin-bottom: .1em;
+	font-weight: 900;
+}
+
+.plan-price{
+	margin-top: .1em;
+	color: var(--desaturated-blue);
+}
+
+/* LINKS */
+
+a:hover{
+	cursor: pointer;
+}
 
 .plan-change-link{
-	
+	color: var(--bright-blue);
+	font-weight: 700;
+}
+
+.plan-change-link:visited{
+	color: var(--bright-blue);
+}
+
+.plan-change-link:hover{
+	text-decoration: none;
+	color: #766CF1;
 }
 
 .btn{
-	
-	width: var(--layout-inner-frames-width);
-	
+	width: var(--layout-inner-frame-width);
+	padding: .8em 0 .8em 0;
+	margin-top: 1.5em;
+
+	border-radius: 10px;
+
 	text-align: center;
 }
 
+.btn:link{
+	text-decoration: none;
+}
+
+.btn-payment{
+	background-color: var(--bright-blue);
+	color: white;
+
+	box-shadow: 0 1em 2em -15px var(--bright-blue);
+}
+
+.btn-payment:visited{
+	color: white;
+}
+
+.btn-payment:hover{
+	background: #766CF1;
+}
+
+.btn-cancel{
+	color: var(--desaturated-blue);
+	font-weight: 700;
+}
+
+.btn-cancel:hover{
+	color: var(--dark-blue);
+}
+
+@media (max-width: 500px ) {
+
+	body{
+		background-image: url("images/pattern-background-mobile.svg");
+		font-size: var(--body-copy-font-size-mobile);
+	}
+
+	.l-banner, .l-content{
+		width: var(--layout-frame-width-mobile);
+	}
+
+	.l-plan-selection, .btn{
+		width: var(--layout-inner-frame-width-mobile);
+	}
+
+	.btn{
+		padding: 1.2em 0 1.2em 0;
+	}
+
+	.btn-cancel{
+		margin-top: .5em;
+	}
+
+}
